@@ -8,7 +8,7 @@ from sklearn import metrics
 st.title('Diabetes Prediction App')
 
 # read and split data
-diabete_df = pd.read_csv('./resources/diabetes_data_upload.csv', sep=",")
+diabete_df = pd.read_csv('diabetes_data_upload.csv', sep=",")
 
 # print information about data
 diabete_df.info()
