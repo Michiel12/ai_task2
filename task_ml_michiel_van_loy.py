@@ -48,9 +48,10 @@ def SVM():
     st.write("test 2")
 
 #st.button(label='test', on_click=DTC)
-st.button(label='test 2', on_click=SVM)
-if st.button('test'):
+if st.button('dtc'):
     DTC()
+elif st.button('svm'):
+    SVM()
 
 # Create buttons for different prediction methods
 method = st.radio("Select a prediction method:", ("Decision Tree", "Support Vector Machine", "K-Nearest Neighbors"))
