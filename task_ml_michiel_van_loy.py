@@ -31,7 +31,18 @@ X_cat_oh = ce_oh.fit_transform(X)
 X_cat_oh_test = ce_oh.fit_transform(X_test)
 
 
+st.button(label='test', on_click=DTC())
 
+def DTC():
+    # Decision Tree Classifier
+    from sklearn.tree import DecisionTreeClassifier
+    clf = DecisionTreeClassifier(criterion="entropy")
+    clf = clf.fit(X_cat_oh, y)
+    prediction = clf.predict(X_cat_oh_test)
+    accuracy = metrics.accuracy_score(y_test, prediction)
+    
+    st.write("Accuracy:", accuracy)
+    st.write("test")
 
 
 # Create buttons for different prediction methods
