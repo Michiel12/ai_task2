@@ -10,12 +10,6 @@ st.title('Diabetes Prediction App')
 # read and split data
 diabete_df = pd.read_csv('diabetes_data_upload.csv', sep=",")
 
-# print information about data
-diabete_df.info()
-
-# print the number of null values
-print(diabete_df.isnull().sum())
-
 feature_cols = ['Age', 'Gender', 'Polyuria', 'Polydipsia', 'sudden weight loss', 'weakness', 'Polyphagia', 'Genital thrush', 'visual blurring', 'Itching', 'Irritability', 'delayed healing', 'partial paresis','muscle stiffness', 'Alopecia', 'Obesity']
 
 # split dataset in features and target variable
@@ -30,6 +24,9 @@ ce_oh = ce.OneHotEncoder(cols = feature_cols[1:])
 X_cat_oh = ce_oh.fit_transform(X)
 X_cat_oh_test = ce_oh.fit_transform(X_test)
 
+
+if st.button('test'):
+    DTC()
 
 def DTC():
     # Decision Tree Classifier
