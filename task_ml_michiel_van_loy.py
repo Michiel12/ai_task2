@@ -32,53 +32,37 @@ X_cat_oh_test = ce_oh.fit_transform(X_test)
 
 
 
-# Decision Three Classifier
-from sklearn.tree import DecisionTreeClassifier
+# Create buttons for different prediction methods
+method = st.radio("Select a prediction method:", ("Decision Tree", "Support Vector Machine", "K-Nearest Neighbors"))
 
-# fit the classifier
-## build the models
-clf = DecisionTreeClassifier(criterion = "entropy")
-## train the classifiers
-clf = clf.fit(X_cat_oh, y)
+if method == "Decision Tree":
+    # Decision Tree Classifier
+    clf = DecisionTreeClassifier(criterion="entropy")
+    clf = clf.fit(X_cat_oh, y)
+    prediction = clf.predict(X_cat_oh_test)
+    accuracy = metrics.accuracy_score(y_test, prediction)
 
-# create predictions
-prediction = clf.predict(X_cat_oh_test)
-# Calculate and print the accuracy
-accuracy = metrics.accuracy_score(y_test, prediction)
-print("Accuracy:", accuracy)
+    st.write("Accuracy:", accuracy)
+    st.write("Explanation: Decision Tree is a non-linear classification model that creates a tree-like structure to make predictions based on the feature values.")
 
+elif method == "Support Vector Machine":
+    # Support Vector Machine
+    clf = SVC(kernel='linear')
+    clf.fit(X_cat_oh, y)
+    prediction = clf.predict(X_cat_oh_test)
+    accuracy = metrics.accuracy_score(y_test, prediction)
 
+    st.write("Accuracy:", accuracy)
+    st.write("Explanation: Support Vector Machine is a linear classifier that aims to find the hyperplane that best separates the data into different classes.")
 
-# Support Vector Machine
-from sklearn.svm import SVC
+elif method == "K-Nearest Neighbors":
+    # K-Nearest Neighbors
+    clf = KNeighborsClassifier(n_neighbors=4)
+    clf.fit(X_cat_oh, y)
+    prediction = clf.predict(X_cat_oh_test)
+    accuracy = metrics.accuracy_score(y_test, prediction)
 
-# Create an SVM classifier
-clf = SVC(kernel='linear')  # You can choose different kernels like 'linear', 'rbf', 'poly', etc.
+    st.write("Accuracy:", accuracy)
+    st.write("Explanation: K-Nearest Neighbors is a non-parametric classification algorithm that classifies data points based on the majority class of their k-nearest neighbors.")
 
-# Train the classifier on the training data
-clf.fit(X_cat_oh, y)
-
-# Make predictions on the test data
-prediction = clf.predict(X_cat_oh_test)
-
-# Calculate and print the accuracy of the classifier
-accuracy = metrics.accuracy_score(y_test, prediction)
-print("Accuracy:", accuracy)
-
-
-
-# K-Nearest Neighbors
-from sklearn.neighbors import KNeighborsClassifier
-
-# Create a KNN classifier with k=4 (you can choose the value of k)
-clf = KNeighborsClassifier(n_neighbors=4)
-
-# Train the classifier on the training data
-clf.fit(X_cat_oh, y)
-
-# Make predictions on the test data
-prediction = clf.predict(X_cat_oh_test)
-
-# Calculate and print the accuracy of the classifier
-accuracy = metrics.accuracy_score(y_test, prediction)
-print("Accuracy:", accuracy)
+st.info("Please select a prediction method to see the accuracy and explanation.")
