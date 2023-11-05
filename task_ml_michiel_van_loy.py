@@ -25,38 +25,10 @@ X_cat_oh = ce_oh.fit_transform(X)
 X_cat_oh_test = ce_oh.fit_transform(X_test)
 
 
-def DTC():
-    # Decision Tree Classifier
-    from sklearn.tree import DecisionTreeClassifier
-    clf = DecisionTreeClassifier(criterion="entropy")
-    clf = clf.fit(X_cat_oh, y)
-    prediction = clf.predict(X_cat_oh_test)
-    accuracy = metrics.accuracy_score(y_test, prediction)
-    
-    st.write("Accuracy:", accuracy)
-    st.write("test")
-
-def SVM():
-    # Support Vector Machine
-    from sklearn.svm import SVC
-    clf = SVC(kernel='linear')
-    clf.fit(X_cat_oh, y)
-    prediction = clf.predict(X_cat_oh_test)
-    accuracy = metrics.accuracy_score(y_test, prediction)
-    
-    st.write("Accuracy:", accuracy)
-    st.write("test 2")
-
-#st.button(label='test', on_click=DTC)
-if st.button('dtc'):
-    DTC()
-elif st.button('svm'):
-    SVM()
-
 # Create buttons for different prediction methods
-method = st.radio("Select a prediction method:", ("Decision Tree", "Support Vector Machine", "K-Nearest Neighbors"))
+method = st.radio("Select a prediction method:", ("Decision Tree Classifier", "Support Vector Machine", "K-Nearest Neighbors"))
 
-if method == "Decision Tree":
+if method == "Decision Tree Classifier":
     # Decision Tree Classifier
     from sklearn.tree import DecisionTreeClassifier
     clf = DecisionTreeClassifier(criterion="entropy")
@@ -65,7 +37,7 @@ if method == "Decision Tree":
     accuracy = metrics.accuracy_score(y_test, prediction)
 
     st.write("Accuracy:", accuracy)
-    st.write("Explanation: Decision Tree is a non-linear classification model that creates a tree-like structure to make predictions based on the feature values.")
+    st.write("The Decision Tree Classifier begins with selecting the features. These features will be used to ask questions. These question are for example about the age, is the person older or younger then 30 years, and these question will form a tree. This will continue until it goes trough all features or until a maximum depth is met. The values of the prediction will go trough the tree to get a prediction.")
 
 elif method == "Support Vector Machine":
     # Support Vector Machine
