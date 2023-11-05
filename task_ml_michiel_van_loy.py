@@ -32,11 +32,14 @@ X_cat_oh_test = ce_oh.fit_transform(X_test)
 
 
 
+
+
 # Create buttons for different prediction methods
 method = st.radio("Select a prediction method:", ("Decision Tree", "Support Vector Machine", "K-Nearest Neighbors"))
 
 if method == "Decision Tree":
     # Decision Tree Classifier
+    from sklearn.tree import DecisionTreeClassifier
     clf = DecisionTreeClassifier(criterion="entropy")
     clf = clf.fit(X_cat_oh, y)
     prediction = clf.predict(X_cat_oh_test)
@@ -47,6 +50,7 @@ if method == "Decision Tree":
 
 elif method == "Support Vector Machine":
     # Support Vector Machine
+    from sklearn.svm import SVC
     clf = SVC(kernel='linear')
     clf.fit(X_cat_oh, y)
     prediction = clf.predict(X_cat_oh_test)
@@ -57,6 +61,7 @@ elif method == "Support Vector Machine":
 
 elif method == "K-Nearest Neighbors":
     # K-Nearest Neighbors
+    from sklearn.neighbors import KNeighborsClassifier
     clf = KNeighborsClassifier(n_neighbors=4)
     clf.fit(X_cat_oh, y)
     prediction = clf.predict(X_cat_oh_test)
