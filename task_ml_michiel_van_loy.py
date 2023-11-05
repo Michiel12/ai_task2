@@ -1,7 +1,11 @@
+import streamlit as st
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import category_encoders as ce
 from sklearn import metrics
+
+st.title('Diabetes Prediction App')
 
 # read and split data
 diabete_df = pd.read_csv('./resources/diabetes_data_upload.csv', sep=",")
