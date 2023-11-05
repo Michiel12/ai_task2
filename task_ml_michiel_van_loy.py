@@ -31,8 +31,6 @@ X_cat_oh = ce_oh.fit_transform(X)
 X_cat_oh_test = ce_oh.fit_transform(X_test)
 
 
-st.button(label='test', on_click=DTC())
-
 def DTC():
     # Decision Tree Classifier
     from sklearn.tree import DecisionTreeClassifier
@@ -43,6 +41,8 @@ def DTC():
     
     st.write("Accuracy:", accuracy)
     st.write("test")
+
+st.button(label='test', on_click=DTC())
 
 
 # Create buttons for different prediction methods
