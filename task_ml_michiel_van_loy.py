@@ -54,7 +54,7 @@ def SVM():
     st.write("test 2")
 
 st.button(label='test', on_click=DTC())
-st.button(label='test', on_click=SVM())
+st.button(label='test 2', on_click=SVM())
 
 
 # Create buttons for different prediction methods
