@@ -42,7 +42,19 @@ def DTC():
     st.write("Accuracy:", accuracy)
     st.write("test")
 
+def SVM():
+    # Support Vector Machine
+    from sklearn.svm import SVC
+    clf = SVC(kernel='linear')
+    clf.fit(X_cat_oh, y)
+    prediction = clf.predict(X_cat_oh_test)
+    accuracy = metrics.accuracy_score(y_test, prediction)
+    
+    st.write("Accuracy:", accuracy)
+    st.write("test 2")
+
 st.button(label='test', on_click=DTC())
+st.button(label='test', on_click=SVM())
 
 
 # Create buttons for different prediction methods
