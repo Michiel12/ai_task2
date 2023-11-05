@@ -52,6 +52,7 @@ def SVM():
     
     st.write("Accuracy:", accuracy)
     st.write("test 2")
+    return "test"
 
 st.button(label='test', on_click=DTC())
 st.button(label='test 2', on_click=SVM())
