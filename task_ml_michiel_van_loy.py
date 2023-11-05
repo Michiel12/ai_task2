@@ -25,9 +25,6 @@ X_cat_oh = ce_oh.fit_transform(X)
 X_cat_oh_test = ce_oh.fit_transform(X_test)
 
 
-if st.button('test'):
-    DTC()
-
 def DTC():
     # Decision Tree Classifier
     from sklearn.tree import DecisionTreeClassifier
@@ -52,7 +49,8 @@ def SVM():
 
 #st.button(label='test', on_click=DTC)
 st.button(label='test 2', on_click=SVM)
-
+if st.button('test'):
+    DTC()
 
 # Create buttons for different prediction methods
 method = st.radio("Select a prediction method:", ("Decision Tree", "Support Vector Machine", "K-Nearest Neighbors"))
