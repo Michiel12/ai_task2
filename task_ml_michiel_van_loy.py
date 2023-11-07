@@ -8,13 +8,13 @@ from sklearn import metrics
 st.title('Diabetes Prediction App')
 
 # read and split data
-diabete_df = pd.read_csv('diabetes_data_upload.csv', sep=",")
+diabetes_df = pd.read_csv('diabetes_data_upload.csv', sep=",")
 
 feature_cols = ['Age', 'Gender', 'Polyuria', 'Polydipsia', 'sudden weight loss', 'weakness', 'Polyphagia', 'Genital thrush', 'visual blurring', 'Itching', 'Irritability', 'delayed healing', 'partial paresis','muscle stiffness', 'Alopecia', 'Obesity']
 
 # split dataset in features and target variable
-X = diabete_df[feature_cols]
-y = diabete_df['class']
+X = diabetes_df[feature_cols]
+y = diabetes_df['class']
 
 # split data in training and test set
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
