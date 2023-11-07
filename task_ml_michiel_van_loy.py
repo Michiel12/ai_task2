@@ -37,8 +37,11 @@ if method == "Decision Tree Classifier":
     accuracy = metrics.accuracy_score(y_test, prediction)
     confusion = metrics.confusion_matrix(y_test, prediction)
     
+    st.header("Decision Tree Classifier")
+    st.subheader("Explanation")
     st.write("The Decision Tree Classifier begins with selecting the features. These features will be used to ask questions. These questions are for example about the age, is the person older or younger than 30 years, and these question will form a tree. This will continue until it goes through all features or until a maximum depth is met. The values of the prediction will go through the tree to get a prediction.")
     st.write("As you can see, this algorithm has an accuracy of around 0.75 - 0.85. Also, the decision matrix shows that this algorithm sometimes has a lot of false positive values, this means that the prediction was positive when it should have been negative.")
+    st.subheader("Accuracy")
     st.write("Accuracy:", accuracy)
     st.write("Confusion Matrix:")
     st.write("[[True Negative  False Positive]")
