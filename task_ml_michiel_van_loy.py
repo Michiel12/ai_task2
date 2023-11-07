@@ -75,10 +75,17 @@ elif method == "K-Nearest Neighbors":
     accuracy = metrics.accuracy_score(y_test, prediction)
     confusion = metrics.confusion_matrix(y_test, prediction)
 
+    
+    st.write("Also for K-Nearest Neighbors we have data that we want to split in two group, red and blue. These colors will be represented on a map, where each house will have a color. When KNN wants to predict the color of a new house it will look at his neighbors. The amount of neighbors KNN will look at (in my case 4), will decide what color the new house will get. It will choose the color that occurs the most in the neighbors. The amount of neighbors to look at can be different for each scenario, here are some of the number with their accuracy: *1 = 0.81*, *2 = 0.88*, *3 = 0.85*, *4 = 0.89* and *5 = 0.88*. In my case, 4 is the ideal amount of neighbors to look at.")
+    st.write("Here you can see that KNN has the best accuracy. This is also because I can choose the amount of neighbors to look at myself so I can choose the best number. Also the confusion matrix has the best output of them all, it has the most right answers, the only downside is that KNN has the highest amount of false negative values.")
     st.write("Accuracy:", accuracy)
     st.write("Confusion Matrix:")
     st.write("[[True Negative  False Positive]")
     st.write(" [False Negative  True Positive]]")
     st.write(confusion)
-    st.write("Also for K-Nearest Neighbors we have data that we want to split in two group, red and blue. These colors will be represented on a map, where each house will have a color. When KNN wants to predict the color of a new house it will look at his neighbors. The amount of neighbors KNN will look at (in my case 4), will decide what color the new house will get. It will choose the color that occurs the most in the neighbors. The amount of neighbors to look at can be different for each scenario, here are some of the number with their accuracy: *1 = 0.81*, *2 = 0.88*, *3 = 0.85*, *4 = 0.89* and *5 = 0.88*. In my case, 4 is the ideal amount of neighbors to look at.")
-    st.write("Here you can see that KNN has the best accuracy. This is also because I can choose the amount of neighbors to look at myself so I can choose the best number. Also the confusion matrix has the best output of them all, it has the most right answers, the only downside is that KNN has the highest amount of false negative values.")
+    
+    
+    st.write("Confusion Matrix:")
+    st.markdown("```\n[[True Negative  False Positive]\n [False Negative  True Positive]]\n```")
+    st.write("Confusion Matrix Values:")
+    st.write(confusion)
