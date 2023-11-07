@@ -5,7 +5,8 @@ from sklearn.model_selection import train_test_split
 import category_encoders as ce
 from sklearn import metrics
 
-st.title('AI Task 2: Diabetes Prediction App - Michiel Van Loy r0889624')
+st.title('AI task 2 by Michiel Van Loy r0889624')
+st.header("Diabetes Prediction App")
 
 # read and split data
 diabetes_df = pd.read_csv('diabetes_data_upload.csv', sep=",")
