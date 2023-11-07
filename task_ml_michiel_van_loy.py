@@ -54,7 +54,7 @@ elif method == "Support Vector Machine":
 
     st.write("Accuracy:", accuracy)
     st.write("Confusion Matrix:")
-    st.write("[[True Negative (TN)  False Positive (FP)]\n [False Negative (FN)  True Positive (TP)]]")
+    st.markdown("[[True Negative (TN)  False Positive (FP)]\n [False Negative (FN)  True Positive (TP)]]")
     st.write(confusion)
     st.write("Explanation: Support Vector Machine is a linear classifier that aims to find the hyperplane that best separates the data into different classes.")
 
@@ -69,6 +69,6 @@ elif method == "K-Nearest Neighbors":
 
     st.write("Accuracy:", accuracy)
     st.write("Confusion Matrix:")
-    st.write("[[True Negative (TN)  False Positive (FP)]", "[False Negative (FN)  True Positive (TP)]]")
+    st.markdown("[[True Negative (TN)  False Positive (FP)]\n [False Negative (FN)  True Positive (TP)]]")
     st.write(confusion)
     st.write("Explanation: K-Nearest Neighbors is a non-parametric classification algorithm that classifies data points based on the majority class of their k-nearest neighbors.")
