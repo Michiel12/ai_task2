@@ -26,8 +26,7 @@ X_cat_oh_test = ce_oh.fit_transform(X_test)
 
 
 # Create buttons for different prediction methods
-
-method = st.radio("Decision Tree Classifier", "Support Vector Machine", "K-Nearest Neighbors")
+method = st.radio("Select a prediction method:", ("Decision Tree Classifier", "Support Vector Machine", "K-Nearest Neighbors"))
 
 if method == "Decision Tree Classifier":
     # Decision Tree Classifier
