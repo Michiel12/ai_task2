@@ -35,8 +35,12 @@ if method == "Decision Tree Classifier":
     clf = clf.fit(X_cat_oh, y)
     prediction = clf.predict(X_cat_oh_test)
     accuracy = metrics.accuracy_score(y_test, prediction)
-
+    confusion = metrics.confusion_matrix(y_test, prediction)
+    
     st.write("Accuracy:", accuracy)
+    st.write("Confusion Matrix:")
+    st.write("[[True Negative (TN)  False Positive (FP)]\n [False Negative (FN)  True Positive (TP)]]")
+    st.write(confusion)
     st.write("The Decision Tree Classifier begins with selecting the features. These features will be used to ask questions. These question are for example about the age, is the person older or younger then 30 years, and these question will form a tree. This will continue until it goes trough all features or until a maximum depth is met. The values of the prediction will go trough the tree to get a prediction.")
 
 elif method == "Support Vector Machine":
@@ -46,8 +50,12 @@ elif method == "Support Vector Machine":
     clf.fit(X_cat_oh, y)
     prediction = clf.predict(X_cat_oh_test)
     accuracy = metrics.accuracy_score(y_test, prediction)
+    confusion = metrics.confusion_matrix(y_test, prediction)
 
     st.write("Accuracy:", accuracy)
+    st.write("Confusion Matrix:")
+    st.write("[[True Negative (TN)  False Positive (FP)]\n [False Negative (FN)  True Positive (TP)]]")
+    st.write(confusion)
     st.write("Explanation: Support Vector Machine is a linear classifier that aims to find the hyperplane that best separates the data into different classes.")
 
 elif method == "K-Nearest Neighbors":
@@ -57,8 +65,10 @@ elif method == "K-Nearest Neighbors":
     clf.fit(X_cat_oh, y)
     prediction = clf.predict(X_cat_oh_test)
     accuracy = metrics.accuracy_score(y_test, prediction)
+    confusion = metrics.confusion_matrix(y_test, prediction)
 
     st.write("Accuracy:", accuracy)
+    st.write("Confusion Matrix:")
+    st.write("[[True Negative (TN)  False Positive (FP)]\n [False Negative (FN)  True Positive (TP)]]")
+    st.write(confusion)
     st.write("Explanation: K-Nearest Neighbors is a non-parametric classification algorithm that classifies data points based on the majority class of their k-nearest neighbors.")
-
-st.info("Please select a prediction method to see the accuracy and explanation.")
