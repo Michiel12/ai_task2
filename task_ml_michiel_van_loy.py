@@ -58,7 +58,7 @@ elif method == "Support Vector Machine":
     st.write("[[True Negative (TN)  False Positive (FP)]")
     st.write(" [False Negative (FN)  True Positive (TP)]]")
     st.write(confusion)
-    st.write("Explanation: Support Vector Machine is a linear classifier that aims to find the hyperplane that best separates the data into different classes.")
+    st.write("In Linear Support Vector Machine you start of with for exmaple two categories, cats and dogs. In this categorie SVM will try to find a line to plit the data into two groups. This line is called the decision boundry. This line will be based on special points, these points are called support vectors and they make sure the line takes the best route. The line will try to have as much distance between the support vectors, it wants the largest margin. Like expected will SVM first have to train itself but afterwards it can tell the difference between both groups.")
 
 elif method == "K-Nearest Neighbors":
     # K-Nearest Neighbors
@@ -74,4 +74,4 @@ elif method == "K-Nearest Neighbors":
     st.write("[[True Negative (TN)  False Positive (FP)]")
     st.write(" [False Negative (FN)  True Positive (TP)]]")
     st.write(confusion)
-    st.write("Explanation: K-Nearest Neighbors is a non-parametric classification algorithm that classifies data points based on the majority class of their k-nearest neighbors.")
+    st.write("For K-Nearest Neighbors we have data than we want to plit in two group, red and blue. These colors will be represented on a map where each house will have a color. When KNN wants to predict the color of a new house it will look at his neighbors. The amount of neighbors KNN will look at (in my casue 3), will decide what color the new house will get. It will choose the color that occurs the most in the neighbors. The amount of neighbors to look at can be different for each cenario, here are some of the number with their accuracy: *1 = 0.81*, *2 = 0.88*, *3 = 0.85*, *4 = 0.89* and *5 = 0.88*. In my case 4 is the ideal amount of neighbors to look at.")
