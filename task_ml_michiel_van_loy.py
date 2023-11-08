@@ -58,7 +58,7 @@ elif method == "Support Vector Machine":
     confusion = metrics.confusion_matrix(y_test, prediction)
 
     st.subheader("Explanation")
-    st.write("In Linear Support Vector Machine, you start off with for example two categories, cats and dogs. Within this categories SVM will try to find a line to split the data into two groups. This line is called the decision boundary. This line will be based on special points, these points are called support vectors and they make sure the line takes the best route. The line will try to have as much distance between the support vectors, it wants the largest margin. Like expected will SVM first have to train itself but afterwards it can tell the difference between both groups.")
+    st.write("In Linear Support Vector Machine, you start off with for example two categories, cats and dogs. Within this categories SVM will try to find a line to split the data into two groups. This line is called the decision boundary. This line will be based on special points, these points are called support vectors and they make sure the line takes the best route. The line will try to have as much distance between the support vectors, it wants the largest margin. Like expected SVM will first have to train itself but afterwards it can tell the difference between both groups.")
     st.subheader("Accuracy")
     st.write("As you can see, the accuracy of SVM is not as good, but it is a lot more consistent. When we look at the confusion matrix, you can see that also this algorithm has a lot of false positive values. Luckily it is better to have false positives than false negatives.")
     st.write("Accuracy:", accuracy)
